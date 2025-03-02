@@ -1,4 +1,4 @@
-Welcome to the LInz wiki!
+
 ## LInz | 独行僧的博客 
 ### 文明化历程 
 
