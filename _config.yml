@@ -17,7 +17,11 @@ kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
 
-remote_theme: pages-themes/modernist@v0.2.0
+theme: minima
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+  - jekyll-feed
 
+# 自定义颜色扩展
+colors:
+  primary: "#1a3d2c"
+  secondary: "#2d5a4d"
