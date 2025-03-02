@@ -1,0 +1,41 @@
+:root {
+  --dark-green: #1a3d2c;     /* 主墨绿色 */
+  --deep-green: #0f2a20;     /* 深绿背景 */
+  --accent-green: #2d5a4d;   /* 辅助绿色 */
+  --text-light: #e0e0e0;     /* 浅色文字 */
+}
+
+body {
+  background-color: var(--deep-green);
+  color: var(--text-light);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.navbar {
+  background-color: var(--dark-green);
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar .logo {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+a {
+  color: var(--accent-green);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3d7a6e;
+}
