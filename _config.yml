@@ -8,7 +8,7 @@ plugins:
 
 lsi: false
 safe: true
-source: /LInz/index.html
+source: /LInz/
 incremental: false
 highlighter: rouge
 gist:
