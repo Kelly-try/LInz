@@ -1,0 +1,27 @@
+
+title: Xilin's homepage
+description: Bookmark this to keep an eye on my project updates!
+
+theme: minima
+plugins:
+  - jekyll-feed
+
+lsi: false
+safe: true
+source: /LInz/
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+theme: minima
+plugins:
+  - jekyll-feed
+
+# 自定义颜色扩展
+colors:
+  primary: "#1a3d2c"
+  secondary: "#2d5a4d"

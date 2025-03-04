@@ -1,0 +1,34 @@
+// 覆盖主题的默认颜色变量
+$primary-color:   #1a3d2c;    // 主墨绿色
+$background-color: #0d241c;   // 深色背景
+$text-color:      #e0e0e0;    // 浅灰文字
+$link-color:      #3d7a6e;    // 链接色
+
+// 导入原始主题样式
+@import "minima";
+
+// 自定义扩展样式
+body {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+.site-header {
+  background-color: darken($primary-color, 5%);
+  border-bottom: 2px solid lighten($primary-color, 10%);
+}
+
+.btn-primary {
+  background-color: $link-color;
+  &:hover {
+    background-color: lighten($link-color, 10%);
+  }
+}
+
+// 代码块样式适配
+.highlight {
+  background-color: lighten($background-color, 5%);
+  pre {
+    background-color: transparent;
+  }
+}
