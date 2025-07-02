@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>时空感知与心灵研究 | ohh</title>
+    <title>认知边界：时空感知与数学思考 | ohh</title>
     <style>
         :root {
             --pink: #FFCCCC;
@@ -15,11 +15,12 @@
             --purple: #6a11cb;
             --light-bg: rgba(255, 255, 255, 0.7);
             --energy-color: rgba(106, 17, 203, 0.1);
+            --quote-border: #6a9fb5;
         }
         
         body {
             background-color: var(--pink);
-            font-family: 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+            font-family: 'Microsoft YaHei', '微软雅黑', 'Georgia', serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
@@ -54,7 +55,7 @@
             margin: 15px 0 10px;
         }
         
-        .note-section, .research-section, .energy-section {
+        .note-section, .research-section, .energy-section, .philosophy-section {
             background-color: var(--light-bg);
             padding: 25px;
             border-radius: 15px;
@@ -65,6 +66,11 @@
         .energy-section {
             background-color: var(--energy-color);
             border-left: 4px solid var(--purple);
+        }
+        
+        .philosophy-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-top: 3px solid var(--quote-border);
         }
         
         .question {
@@ -191,11 +197,49 @@
             color: var(--purple);
             font-weight: bold;
         }
+        
+        blockquote {
+            border-left: 3px solid var(--quote-border);
+            padding-left: 15px;
+            color: #555;
+            font-style: italic;
+            margin: 20px 0;
+        }
+        
+        aside {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid var(--quote-border);
+        }
+        
+        .stage {
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        
+        .tasks {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        .tasks li:before {
+            content: "→ ";
+            color: var(--quote-border);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--dark-blue);
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
     <div class="note-section">
-        <h1>时空感知与心灵研究</h1>
+        <h1>认知边界：时空感知与数学思考</h1>
         <p>今天练琴了吗？在看什么书？
 周末回家的作业写的速度快一点哦。
 我知道你喜欢慢慢写，但是稍微再快一点。
@@ -205,6 +249,38 @@
         <span class="question">为什么说古希腊人对科学的发展很重要？</span>
         <span class="question">有哪些历史证据可以证明人类的脑活动可以产生心智？</span>
         <span class="question">利用现代的研究方法，我们能对大脑和心智有哪些了解？</span>
+    </div>
+    
+    <div class="philosophy-section">
+        <blockquote>
+            <p>世界的永恆之謎，在於它的可理解性，讓他驚嘆不已的正是這個問題。</p>
+            <footer>——愛因斯坦</footer>
+        </blockquote>
+
+        <p>正如統計物理，他存在的意義。</p>
+        <p>我居然能夠理解。</p>
+        <p>而聲、光、熱 與數據結構。</p>
+
+        <blockquote>
+            <p>我知道我是人。</p>
+            <footer>——維特根斯坦《最後的筆記》</footer>
+        </blockquote>
+
+        <div class="stage">
+            <h2>Stage 1: Calculus <em>James Stewart</em></h2>
+            <ul class="tasks">
+                <li>閱讀 Reading</li>
+                <li>翻譯 Translation</li>
+                <li>批註 Annotation</li>
+                <li>寫作 Writing</li>
+            </ul>
+        </div>
+
+        <aside>
+            <p>A great discovery solves a great problem but there is a grain of discovery in the solution of any problem.</p>
+            <p>Your problem may be modest; but if it challenges your curiosity and brings into play your inventive faculties, and if you solve it by your own means, you may experience the tension and enjoy the triumph of discovery.</p>
+            <footer><em>George Polya</em></footer>
+        </aside>
     </div>
     
     <div class="energy-section">
@@ -257,5 +333,9 @@
             <p>虽然定义很简单，但我们对癌症的发病原因和疾病发展机制仍缺乏详细的了解。这种认知的局限性使得癌症研究和治疗成为一个极具挑战性的领域，需要持续深入的科学探索。</p>
         </div>
     </div>
+
+    <footer>
+        <p>思考的痕迹 · 时空感知研究 · 2023</p>
+    </footer>
 </body>
 </html>
