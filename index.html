@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>认知边界：时空感知与数学思考 | ohh</title>
+    <title>时空能量感知</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --pink: #FFCCCC;
@@ -16,144 +17,215 @@
             --light-bg: rgba(255, 255, 255, 0.7);
             --energy-color: rgba(106, 17, 203, 0.1);
             --quote-border: #6a9fb5;
+            --cancer-red: #e74c3c;
+            --healthy-green: #2ecc71;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
-            background-color: var(--pink);
-            font-family: 'Microsoft YaHei', '微软雅黑', 'Georgia', serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
-            margin: 0;
-            padding: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
             color: #333;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(106, 17, 203, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgba(52, 152, 219, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 30% 70%, rgba(231, 76, 60, 0.05) 0%, transparent 20%);
+            z-index: -1;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            position: relative;
         }
         
         h1 {
             color: var(--dark-pink);
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: normal;
-            border-bottom: 1px dashed var(--dark-pink);
-            padding-bottom: 10px;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            display: inline-block;
         }
         
-        h2 {
-            color: var(--light-blue);
-            margin-top: 30px;
-            border-left: 4px solid var(--light-blue);
-            padding-left: 10px;
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--dark-pink), var(--purple));
+            border-radius: 2px;
         }
         
-        h3 {
+        .subtitle {
             color: var(--dark-blue);
-            margin-top: 20px;
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 25px;
+            font-weight: 300;
         }
         
-        h4 {
-            color: var(--purple);
-            margin: 15px 0 10px;
-        }
-        
-        .note-section, .research-section, .energy-section, .philosophy-section {
-            background-color: var(--light-bg);
-            padding: 25px;
+        .intro-box {
+            background: rgba(255, 255, 255, 0.85);
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
+            padding: 25px;
+            margin: 30px auto;
+            max-width: 900px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--purple);
+            position: relative;
+            overflow: hidden;
         }
         
-        .energy-section {
-            background-color: var(--energy-color);
+        .intro-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--purple), var(--dark-pink));
+        }
+        
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background: linear-gradient(90deg, var(--purple), var(--blue));
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-header i {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .energy-section .card-header {
+            background: linear-gradient(90deg, var(--purple), #8e44ad);
+        }
+        
+        .cancer-section .card-header {
+            background: linear-gradient(90deg, var(--cancer-red), #e67e22);
+        }
+        
+        .model-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .model-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
             border-left: 4px solid var(--purple);
-        }
-        
-        .philosophy-section {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-top: 3px solid var(--quote-border);
-        }
-        
-        .question {
-            color: var(--dark-pink);
-            font-weight: bold;
-            display: block;
             margin: 15px 0;
         }
         
-        .link-list {
-            list-style-type: none;
-            padding: 0;
+        .model-title {
+            color: var(--purple);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
         }
         
-        .link-list li {
-            margin-bottom: 12px;
-            padding-left: 25px;
-            position: relative;
+        .model-title i {
+            margin-right: 10px;
         }
         
-        .link-list li:before {
-            content: "⇝";
-            position: absolute;
-            left: 0;
-            color: var(--dark-pink);
-            font-size: 1.2em;
-        }
-        
-        .link-list a {
-            color: var(--blue);
-            text-decoration: none;
-            transition: all 0.3s;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
-        
-        .link-list a:hover {
-            color: var(--dark-pink);
-            background-color: rgba(210, 54, 105, 0.1);
-            text-decoration: none;
-        }
-        
-        .definition {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-left: 4px solid var(--blue);
-            margin: 20px 0;
-            border-radius: 8px;
-        }
-        
-        .limitation {
-            background-color: #fef9e7;
-            padding: 20px;
-            border-left: 4px solid var(--yellow);
-            margin: 20px 0;
-            border-radius: 8px;
-        }
-        
-        .section-title {
-            color: var(--dark-pink);
-            text-align: center;
-            font-size: 1.5em;
-            margin: 40px 0 25px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            position: relative;
-        }
-        
-        .section-title:after {
-            content: "";
-            display: block;
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--dark-pink), transparent);
-            margin: 10px auto 0;
-        }
-        
-        .energy-model {
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
             margin: 25px 0;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.5);
+            background: white;
             border-radius: 10px;
-            border: 1px dashed var(--purple);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(90deg, var(--purple), var(--blue));
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .healthy-cell {
+            background-color: rgba(46, 204, 113, 0.1) !important;
+        }
+        
+        .cancer-cell {
+            background-color: rgba(231, 76, 60, 0.1) !important;
         }
         
         .energy-flow {
@@ -165,177 +237,337 @@
         
         .flow-item {
             text-align: center;
-            padding: 15px;
+            padding: 20px 15px;
             margin: 10px;
-            background: rgba(37, 117, 252, 0.1);
-            border-radius: 8px;
-            min-width: 140px;
-            border: 1px solid rgba(37, 117, 252, 0.3);
-            transition: transform 0.3s;
+            background: white;
+            border-radius: 10px;
+            min-width: 160px;
+            border: 2px solid rgba(106, 17, 203, 0.3);
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
         }
         
         .flow-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            border-color: var(--purple);
         }
         
-        .flow-item:before {
-            content: "⚡";
-            display: block;
-            font-size: 2rem;
+        .flow-icon {
+            font-size: 2.5rem;
             color: var(--purple);
+            margin-bottom: 15px;
+        }
+        
+        .flow-title {
+            font-weight: 600;
             margin-bottom: 10px;
+            color: var(--dark-blue);
         }
         
-        .highlight {
-            background-color: rgba(255, 215, 0, 0.3);
-            padding: 0 3px;
-            border-radius: 2px;
+        .conclusion-section {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(245,247,250,0.9) 100%);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid rgba(106, 17, 203, 0.2);
+            position: relative;
         }
         
-        .bracket {
-            color: var(--purple);
-            font-weight: bold;
+        .conclusion-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--purple), var(--dark-pink), var(--cancer-red));
         }
         
-        blockquote {
-            border-left: 3px solid var(--quote-border);
-            padding-left: 15px;
-            color: #555;
-            font-style: italic;
-            margin: 20px 0;
-        }
-        
-        aside {
-            background: #f8f8f8;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
+        .quote-box {
+            background: rgba(255, 255, 255, 0.7);
             border-left: 4px solid var(--quote-border);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
         }
         
-        .stage {
-            font-weight: bold;
-            margin-top: 30px;
+        .quote-text {
+            font-style: italic;
+            color: #555;
+            line-height: 1.8;
         }
         
-        .tasks {
-            list-style-type: none;
-            padding-left: 20px;
-        }
-        
-        .tasks li:before {
-            content: "→ ";
-            color: var(--quote-border);
+        .quote-author {
+            text-align: right;
+            margin-top: 15px;
+            font-weight: 600;
+            color: var(--dark-blue);
         }
         
         footer {
             text-align: center;
+            padding: 30px;
             margin-top: 40px;
             color: var(--dark-blue);
             font-size: 0.9em;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="note-section">
-        <h1>认知边界：时空感知与数学思考</h1>
-        <p>今天练琴了吗？在看什么书？
-周末回家的作业写的速度快一点哦。
-我知道你喜欢慢慢写，但是稍微再快一点。
-你会想发明乐器吗，你现在可以尝试构想一下。
-我知道你有一个奇思怪想记录本。</p>
-        
-        <span class="question">为什么说古希腊人对科学的发展很重要？</span>
-        <span class="question">有哪些历史证据可以证明人类的脑活动可以产生心智？</span>
-        <span class="question">利用现代的研究方法，我们能对大脑和心智有哪些了解？</span>
+    <header>
+        <h1>时空能量感知与癌症生物学</h1>
+        <p class="subtitle">探索细胞信息流、能量平衡与系统稳定性的深层关联</p>
+    </header>
+    
+    <div class="intro-box">
+        <p class="intro-text">
+            本页面整合了时空能量感知理论与癌症生物学研究，揭示两者在信息流动和系统平衡方面的深刻关联。细胞核如同"火山地核"，其信息交流机制决定了细胞的健康状态。正反馈维持系统平衡，负反馈导致系统崩溃——这一原理在微观细胞层面和宏观能量系统中惊人地相似。
+        </p>
+        <p class="intro-text">
+            通过对比健康细胞与癌细胞的信息流动模式，以及分析时空能量感知中的平衡机制，我们可以发现：所有复杂系统的崩溃都源于信息流通受阻和能量分配失衡。这一认知跨越了生物学、物理学和经济学的边界，揭示了复杂系统的普遍规律。
+        </p>
     </div>
     
-    <div class="philosophy-section">
-        <blockquote>
-            <p>世界的永恆之謎，在於它的可理解性，讓他驚嘆不已的正是這個問題。</p>
-            <footer>——愛因斯坦</footer>
-        </blockquote>
-
-        <p>正如統計物理，他存在的意義。</p>
-        <p>我居然能夠理解。</p>
-        <p>而聲、光、熱 與數據結構。</p>
-
-        <blockquote>
-            <p>我知道我是人。</p>
-            <footer>——維特根斯坦《最後的筆記》</footer>
-        </blockquote>
-
-        <div class="stage">
-            <h2>Stage 1: Calculus <em>James Stewart</em></h2>
-            <ul class="tasks">
-                <li>閱讀 Reading</li>
-                <li>翻譯 Translation</li>
-                <li>批註 Annotation</li>
-                <li>寫作 Writing</li>
-            </ul>
-        </div>
-
-        <aside>
-            <p>A great discovery solves a great problem but there is a grain of discovery in the solution of any problem.</p>
-            <p>Your problem may be modest; but if it challenges your curiosity and brings into play your inventive faculties, and if you solve it by your own means, you may experience the tension and enjoy the triumph of discovery.</p>
-            <footer><em>George Polya</em></footer>
-        </aside>
-    </div>
-    
-    <div class="energy-section">
-        <h2>时空能量感知理论</h2>
-        
-        <div class="energy-model">
-            <p><span class="highlight">时间间隔、空间间隔</span><span class="bracket">【信息、频率、震动】</span><span class="bracket">【频率变化带动能量变化，是否能切入不同的平行时空，平行时空不同能量分布】</span>，呈现一定的密度分布<span class="bracket">【看多了山，脑海是否会变得清澈】</span>塑造-声光热-多模态信息进入-立体的信息进入脑海-刺激大脑的发育、生长平衡、<span class="highlight">"间隔"构成能量强弱【密度】</span>，能量变化能互相感应<span class="bracket">【交变】</span>、时间间隔和空间间隔-过程，构成一整块结构。情绪分级模块感知能量、语言理解空间一整块结构。</p>
-        </div>
-        
-        <div class="energy-model">
-            <h4>大脑黏膜能量模型</h4>
-            <p>大脑是消化系统，黏膜很薄，空间进来后，两端吸引力，撑开黏膜空间，黏膜是可形变的。黏膜收缩或扩张，长期作用在同一个地方，易产生变化。视网膜向内注视，思考模式、向外观察模式，粒子吸引，扩张。记忆本身，思考模式。观察模式，饿了能量低，向外观察获取。同电流相吸。扩张。共振。</p>
-            
-            <div class="energy-flow">
-                <div class="flow-item">收缩电流内</div>
-                <div class="flow-item">收缩电流外</div>
-                <div class="flow-item">扩张电流内</div>
-                <div class="flow-item">扩展电流外</div>
+    <div class="grid-container">
+        <!-- 时空能量感知部分 -->
+        <div class="card energy-section pulse">
+            <div class="card-header">
+                <i class="fas fa-atom"></i>
+                <h2>时空能量感知理论</h2>
             </div>
-            
-            <p>紧绷向外拉扯黏膜。顺流舒张，逆流拉扯。电荷吸引，负外膜，正外空间。形变程度，能量共振产生不同情绪。</p>
+            <div class="card-body">
+                <div class="model-container">
+                    <div class="model-box">
+                        <h3 class="model-title"><i class="fas fa-wave-square"></i> 核心模型</h3>
+                        <p><span class="highlight">时间间隔、空间间隔</span>构成信息的基本载体，频率变化带动能量变化，能量分布塑造平行时空结构。<span class="highlight">"间隔"构成能量强弱【密度】</span>，能量变化通过交变互相感应，形成整体结构。</p>
+                        <p>情绪分级模块感知能量变化，语言理解构建空间结构。多模态信息刺激大脑发育，维持生长平衡。</p>
+                    </div>
+                    
+                    <div class="model-box">
+                        <h3 class="model-title"><i class="fas fa-brain"></i> 大脑黏膜能量模型</h3>
+                        <p>大脑是信息消化系统，黏膜空间在信息作用下形变：</p>
+                        <ul>
+                            <li>视网膜向内注视 - 思考模式（粒子吸引）</li>
+                            <li>向外观察模式 - 获取能量（扩张）</li>
+                            <li>能量状态决定运作模式（饥饿时向外获取）</li>
+                            <li>形变程度产生不同情绪体验</li>
+                        </ul>
+                        
+                        <div class="energy-flow">
+                            <div class="flow-item">
+                                <div class="flow-icon"><i class="fas fa-compress-arrows-alt"></i></div>
+                                <div class="flow-title">收缩电流内</div>
+                                <p>专注思考模式</p>
+                            </div>
+                            <div class="flow-item">
+                                <div class="flow-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                                <div class="flow-title">扩展电流外</div>
+                                <p">环境感知模式</p>
+                            </div>
+                            <div class="flow-item">
+                                <div class="flow-icon"><i class="fas fa-bolt"></i></div>
+                                <div class="flow-title">能量共振</div>
+                                <p>情绪产生机制</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="model-box">
+                        <h3 class="model-title"><i class="fas fa-balance-scale"></i> 系统平衡机制</h3>
+                        <p>正反馈【营养】维持系统稳定：</p>
+                        <ul>
+                            <li>促进细胞核与膜的信息流通</li>
+                            <li>保障细胞正常周期发展</li>
+                            <li>维持能量与信息平衡</li>
+                        </ul>
+                        <p>负反馈【不良刺激】导致系统崩溃：</p>
+                        <ul>
+                            <li>激发细胞核"贪念"但能力有限</li>
+                            <li>外界信息压制细胞核</li>
+                            <li>细胞核膜不稳定，塌陷</li>
+                            <li>信息交流受阻，周期失控</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 癌症生物学部分 -->
+        <div class="card cancer-section pulse">
+            <div class="card-header">
+                <i class="fas fa-microscope"></i>
+                <h2>癌症生物学研究</h2>
+            </div>
+            <div class="card-body">
+                <div class="model-container">
+                    <div class="model-box">
+                        <h3 class="model-title"><i class="fas fa-dna"></i> 癌症定义</h3>
+                        <p>癌症是细胞集合无视正常规则，不受控制地生长，侵入和定植其他组织的疾病。</p>
+                        <div class="limitation">
+                            <p><strong>认知局限：</strong>虽然定义简单，但对癌症的发病原因和发展机制仍缺乏详细理解，使癌症研究成为极具挑战的领域。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="model-box">
+                        <h3 class="model-title"><i class="fas fa-exchange-alt"></i> 细胞信息流对比</h3>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>信息流特征</th>
+                                <th>健康细胞</th>
+                                <th>癌细胞</th>
+                            </tr>
+                            <tr class="healthy-cell">
+                                <td>信息获取</td>
+                                <td>适度、平衡</td>
+                                <td>贪婪、过度</td>
+                            </tr>
+                            <tr class="cancer-cell">
+                                <td>信息处理</td>
+                                <td>正常能力范围内</td>
+                                <td>超出处理能力</td>
+                            </tr>
+                            <tr class="healthy-cell">
+                                <td>核膜稳定性</td>
+                                <td>稳定</td>
+                                <td>塌陷、不稳定</td>
+                            </tr>
+                            <tr class="cancer-cell">
+                                <td>信息输出</td>
+                                <td>正常流通</td>
+                                <td>受阻、紊乱</td>
+                            </tr>
+                            <tr class="healthy-cell">
+                                <td>细胞周期</td>
+                                <td>正常发展</td>
+                                <td>失控、异常增殖</td>
+                            </tr>
+                            <tr class="cancer-cell">
+                                <td>资源分配</td>
+                                <td>均衡</td>
+                                <td>掠夺性汲取</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="model-box">
+                        <h3 class="model-title"><i class="fas fa-exclamation-triangle"></i> 癌症发展机制</h3>
+                        <p>负反馈循环：</p>
+                        <ol>
+                            <li>不良刺激/过度营养诱惑</li>
+                            <li>激发细胞核获取信息的"贪念"</li>
+                            <li>超出细胞信息处理原能力</li>
+                            <li>外界信息压制细胞核</li>
+                            <li>核膜不稳定、塌陷</li>
+                            <li>信息交流受阻</li>
+                            <li>无法控制细胞周期</li>
+                            <li>细胞异常增殖</li>
+                            <li>疯狂汲取外部资源</li>
+                            <li>其他细胞营养匮乏</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
-    <div class="section-title">研究资料</div>
-    
-    <div class="research-section">
-        <h2>相关链接</h2>
-        <ul class="link-list">
-            <li><a href="https://dl.ccf.org.cn/V2/toSearchList.html?classen=-1&searchText=%E8%BE%85%E5%8A%A9%E8%AF%8A%E6%96%AD%E7%BB%BC%E8%BF%B0&searchTextFaceted=&searchTextFacetedVal=" target="_blank">CCF Digital Library Search Page</a></li>
-            <li><a href="https://dl.ccf.org.cn/albumList/getMeetingDetail6091535558199296" target="_blank">CCF Digital Library Meeting Details</a></li>
-            <li><a href="https://academic.oup.com/search-results?page=1&q=cancer%20diagnois&fl_SiteID=191&SearchSourceType=1&allJournals=1" target="_blank">Search Results | Oxford Academic</a></li>
-            <li><a href="https://prod-files-secure.s3.us-west-2.amazonaws.com/9236d55e-9e7a-4ab9-9b72-61c5582577d1/9ded7b96-a4b4-496d-9935-9c27c10ffb24/2301.12291v2.pdf" target="_blank">2301.12291v2.pdf</a></li>
+    <div class="conclusion-section">
+        <h2 style="text-align: center; color: var(--purple); margin-bottom: 30px;">
+            <i class="fas fa-lightbulb"></i> 跨学科洞见：系统平衡的普遍原理
+        </h2>
+        
+        <div class="quote-box">
+            <p class="quote-text">
+                "在研讨会上，相当一部分听众的反应是愤怒：他怎么敢暗示经济是不均衡的！阿瑟为这种激烈反应感到困惑。"
+            </p>
+            <p class="quote-author">——《复杂：诞生于秩序与混沌边缘的科学》M. 米切尔 · 沃尔德洛普</p>
+        </div>
+        
+        <h3 style="color: var(--dark-pink); margin: 25px 0 15px;">核心发现：</h3>
+        <ul style="padding-left: 30px; margin-bottom: 25px;">
+            <li>所有复杂系统（细胞、大脑、经济）都依赖信息流的平衡</li>
+            <li>正反馈维持系统稳定，负反馈导致系统崩溃</li>
+            <li>系统崩溃的共同特征：信息处理能力与输入需求不匹配</li>
+            <li>贪婪的资源汲取导致系统内其他部分匮乏</li>
+            <li>对均衡假设的挑战引发学科范式的冲突</li>
         </ul>
         
-        <h2>Introduction to Cancer Biology</h2>
-        <p>肿瘤信息学介绍</p>
-        
-        <h3>Cancer</h3>
-        
-        <div class="definition">
-            <h4>Definition:</h4>
-            <p>A cancer is often defined as a collection of cells that grow uncontrollably by disregarding the rules imposed on normal cells/tissues, which can invade and colonize other tissues.</p>
-            <p>癌症通常被定义为一种细胞集合，这些细胞无视正常细胞/组织所遵循的规则，不受控制地生长，并能够侵入和定植其他组织。</p>
-        </div>
-        
-        <div class="limitation">
-            <h4>Limitations:</h4>
-            <p>While the definition is simple, we do not have a detailed understanding about what causes a cancer and what drives the disease.</p>
-            <p>虽然定义很简单，但我们对癌症的发病原因和疾病发展机制仍缺乏详细的了解。这种认知的局限性使得癌症研究和治疗成为一个极具挑战性的领域，需要持续深入的科学探索。</p>
-        </div>
+        <h3 style="color: var(--dark-blue); margin: 25px 0 15px;">研究启示：</h3>
+        <p style="margin-bottom: 20px;">
+            通过时空能量感知模型分析癌症发展，我们获得超越传统生物学的研究视角：癌症本质上是细胞层面的信息流通崩溃。这一认知为癌症治疗提供了新思路——恢复细胞信息流的平衡可能比直接杀死癌细胞更为根本。
+        </p>
+        <p>
+            同时，癌症研究也为复杂系统理论提供了微观验证：当系统的信息处理能力无法匹配输入需求时，系统将不可避免地走向崩溃。这一原理在经济学、生态学和社会学中同样适用。
+        </p>
     </div>
-
+    
     <footer>
-        <p>思考的痕迹 · 时空感知研究 · 2025</p>
+        <p>认知边界研究 | 时空感知与复杂系统探索 | 2025</p>
+        <p>整合生物学、物理学与经济学的跨学科研究</p>
     </footer>
+    
+    <script>
+        // 添加卡片悬停动画
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.classList.remove('pulse');
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.classList.add('pulse');
+            });
+        });
+        
+        // 添加滚动动画
+        window.addEventListener('scroll', function() {
+            const cards = document.querySelectorAll('.card');
+            const windowHeight = window.innerHeight;
+            
+            cards.forEach(card => {
+                const cardPosition = card.getBoundingClientRect().top;
+                
+                if(cardPosition < windowHeight - 100) {
+                    card.style.opacity = 1;
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        // 初始化卡片位置
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(50px)';
+            card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+        
+        // 页面加载后触发滚动事件以初始化动画
+        window.dispatchEvent(new Event('scroll'));
+    </script>
 </body>
 </html>
