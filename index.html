@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>枝繁叶茂</title>
+    <title>枝繁叶茂 - 音乐与科学认知</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
@@ -22,6 +22,8 @@
             --forest-green: #2e8b57;
             --deep-blue: #1a237e;
             --gold: #ffd700;
+            --music-purple: #8A2BE2;
+            --music-light: #9370DB;
         }
         
         * {
@@ -52,7 +54,8 @@
             background: 
                 radial-gradient(circle at 10% 20%, rgba(106, 17, 203, 0.05) 0%, transparent 25%),
                 radial-gradient(circle at 90% 80%, rgba(46, 204, 113, 0.05) 0%, transparent 25%),
-                radial-gradient(circle at 30% 70%, rgba(231, 76, 60, 0.03) 0%, transparent 20%);
+                radial-gradient(circle at 30% 70%, rgba(231, 76, 60, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 70% 30%, rgba(138, 43, 226, 0.05) 0%, transparent 20%);
             z-index: -1;
         }
         
@@ -75,7 +78,7 @@
             left: 0;
             width: 100%;
             height: 6px;
-            background: linear-gradient(90deg, var(--forest-green), var(--purple), var(--cancer-red));
+            background: linear-gradient(90deg, var(--forest-green), var(--purple), var(--cancer-red), var(--music-purple));
         }
         
         h1 {
@@ -98,7 +101,7 @@
             transform: translateX(-50%);
             width: 250px;
             height: 4px;
-            background: linear-gradient(90deg, var(--forest-green), var(--purple));
+            background: linear-gradient(90deg, var(--forest-green), var(--purple), var(--music-purple));
             border-radius: 2px;
         }
         
@@ -161,7 +164,6 @@
         }
         
         .card-header {
-            background: linear-gradient(90deg, var(--forest-green), var(--purple));
             color: white;
             padding: 25px;
             display: flex;
@@ -195,6 +197,10 @@
         
         .cancer-section .card-header {
             background: linear-gradient(90deg, var(--cancer-red), #e67e22);
+        }
+        
+        .music-section .card-header {
+            background: linear-gradient(90deg, var(--music-purple), var(--music-light));
         }
         
         .model-container {
@@ -367,7 +373,7 @@
             left: 0;
             width: 100%;
             height: 6px;
-            background: linear-gradient(90deg, var(--forest-green), var(--purple), var(--cancer-red));
+            background: linear-gradient(90deg, var(--forest-green), var(--purple), var(--cancer-red), var(--music-purple));
         }
         
         .conclusion-section::after {
@@ -377,7 +383,7 @@
             left: 0;
             width: 100%;
             height: 6px;
-            background: linear-gradient(90deg, var(--forest-green), var(--purple), var(--cancer-red));
+            background: linear-gradient(90deg, var(--forest-green), var(--purple), var(--cancer-red), var(--music-purple));
         }
         
         .insight-box {
@@ -469,6 +475,131 @@
             100% { transform: translateY(0) rotate(0deg); }
         }
         
+        .music-score {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: block;
+            margin: 20px auto;
+        }
+        
+        .video-placeholder {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            border-radius: 10px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .video-placeholder i {
+            font-size: 4rem;
+            opacity: 0.8;
+        }
+        
+        .composer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .composer-card {
+            width: 200px;
+            padding: 20px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            margin: 15px;
+        }
+        
+        .composer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .composer-portrait {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--music-purple);
+            border: 3px solid var(--music-purple);
+        }
+        
+        .music-quote {
+            font-style: italic;
+            color: var(--music-purple);
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 3px solid var(--music-purple);
+            background: rgba(138, 43, 226, 0.05);
+        }
+        
+        .music-timeline {
+            position: relative;
+            margin: 40px 0;
+            padding: 20px 0;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--music-purple), var(--forest-green));
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .timeline-item {
+            position: relative;
+            width: 45%;
+            padding: 20px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+            z-index: 2;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            margin-left: 5%;
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+        }
+        
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--music-purple);
+        }
+        
+        .timeline-item:nth-child(odd)::before {
+            right: -30px;
+        }
+        
+        .timeline-item:nth-child(even)::before {
+            left: -30px;
+        }
+        
         @media (max-width: 768px) {
             .grid-container {
                 grid-template-columns: 1fr;
@@ -486,17 +617,32 @@
                 min-width: 140px;
                 padding: 20px 15px;
             }
+            
+            .timeline-item {
+                width: 90%;
+                margin-left: 5% !important;
+            }
+            
+            .timeline-item:nth-child(odd)::before,
+            .timeline-item:nth-child(even)::before {
+                left: -25px;
+                right: auto;
+            }
+            
+            .timeline-line {
+                left: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="header-container">
         <h1>枝繁叶茂 <i class="fas fa-seedling leaf-icon"></i></h1>
-        <p class="subtitle">时空能量感知与癌症生物学的深层对话</p>
+        <p class="subtitle">时空能量感知、癌症生物学与音乐认知的深层对话</p>
         
         <div class="quote-container">
-            <p class="quote-text">"世界的永恆之謎，在於它的可理解性，讓他驚嘆不已的正是這個問題。"</p>
-            <p class="quote-author">——愛因斯坦</p>
+            <p class="quote-text">"Mu在古语中是'母亲'的意思，sic是science的缩写。音乐就是指'所有科学之母'。所以你看，音乐很重要。"</p>
+            <p class="quote-author">——张莺老师</p>
         </div>
     </div>
     
@@ -684,6 +830,114 @@
         </div>
     </div>
     
+    <!-- 新增的音乐认知部分 -->
+    <div class="card music-section pulse">
+        <div class="card-header">
+            <i class="fas fa-music"></i>
+            <h2>音乐与科学：认知的共鸣</h2>
+        </div>
+        <div class="card-body">
+            <div class="model-container">
+                <div class="model-box">
+                    <h3 class="model-title"><i class="fas fa-quote-left"></i> 音乐的本质</h3>
+                    <p>"科学，"他打断我的思路说，"音乐远比你想象的要重要得多。"</p>
+                    <p>"Mu在古语中是'母亲'的意思，sic是science的缩写。放到一起，音乐就是指'所有科学之母'。"</p>
+                    
+                    <div class="music-quote">
+                        <p>"微积分是上帝的语言。"</p>
+                        <p style="text-align: right; margin-top: 10px;">——《微积分的力量》</p>
+                    </div>
+                    
+                    <div class="composer-container">
+                        <div class="composer-card">
+                            <div class="composer-portrait">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h4>巴赫</h4>
+                            <p>1685-1750</p>
+                            <p>巴洛克时期</p>
+                        </div>
+                        
+                        <div class="composer-card">
+                            <div class="composer-portrait">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h4>舒伯特</h4>
+                            <p>1797-1828</p>
+                            <p>古典主义晚期</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="model-box">
+                    <h3 class="model-title"><i class="fas fa-bacon"></i> 巴赫：平均律钢琴曲集</h3>
+                    
+                    <div class="music-timeline">
+                        <div class="timeline-line"></div>
+                        
+                        <div class="timeline-item">
+                            <h4>BWV 884</h4>
+                            <p>击键古钢琴、羽管键琴的实际演奏原理→巴洛克时期的触键风格。</p>
+                            <ul style="margin: 10px 0; padding-left: 20px;">
+                                <li>鼓浪屿的钢琴博物馆</li>
+                            </ul>
+                            <div class="video-placeholder">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <p>赛前练习Day 1: BWV884.mp4</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4>巴洛克时期</h4>
+                            <p>世界的局部：地域形态、人文氛围孕育的音乐形态。</p>
+                            <p>自己形成的理解后的处理 | 主观臆断的模仿</p>
+                            <ul style="margin: 10px 0; padding-left: 20px;">
+                                <li>盛原先生：中国人的意识形态对巴赫世界观的理解</li>
+                                <li>侯世达先生：《GEB》对作品的诠释：声部与语气</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4>BWV 846</h4>
+                            <p>前奏曲与赋格</p>
+                            <div class="video-placeholder">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <p>前奏曲：BWV846前奏曲.mp4</p>
+                            <p>赋格节选小节1-13：BWV846赋格1节选.mp4</p>
+                        </div>
+                    </div>
+                    
+                    <div class="insight-box">
+                        <p class="insight-text">
+                            "巴赫的音乐不是为哪一种乐器而作，而是乐器(包括人声)为音乐而生。钢琴，他在晚年看到（而且不喜欢），认为它没有发展前途。"
+                        </p>
+                        <p class="insight-author">——《托维巴赫平均律钢琴曲集演奏指导》</p>
+                    </div>
+                    
+                    <p>音乐、十二平均、天然无粉饰。</p>
+                    <p>他一直坚持在演奏羽管键琴时，需要"如歌的风格"。</p>
+                </div>
+                
+                <div class="model-box">
+                    <h3 class="model-title"><i class="fas fa-music"></i> 舒伯特：即兴曲 D.899</h3>
+                    <p>光在至暗的夜空下被点亮会变得辉煌。</p>
+                    <p>线条、优美的线条。句读和语气。一句话结束了，就有过渡，下一个话题。</p>
+                    <p><strong>【关注过渡。过渡是渐变色。】</strong></p>
+                    
+                    <img src="https://via.placeholder.com/800x400?text=舒伯特即兴曲谱例" alt="舒伯特即兴曲谱例" class="music-score">
+                    
+                    <p>恍若昨日。</p>
+                    <p>主旋律 | 声部 | 弱起 | 本质的</p>
+                    
+                    <div class="music-quote">
+                        <p>"真正的作家可以用打字机、钢笔、铅笔或者任何一样东西来写作。你不会因此而称他为'铅笔作家'，对吧？因为你知道这些不过是书写的工具而已。作品是来自作家内心的。"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="conclusion-section">
         <h2 style="text-align: center; color: var(--purple); margin-bottom: 40px;">
             <i class="fas fa-lightbulb"></i> 跨学科洞见：系统平衡的普遍原理
@@ -700,12 +954,12 @@
             <i class="fas fa-leaf leaf-icon"></i> 核心发现
         </h3>
         <ul style="padding-left: 40px; margin-bottom: 40px; font-size: 1.1rem;">
-            <li>所有复杂系统（细胞、大脑、经济）都依赖信息流的动态平衡</li>
+            <li>所有复杂系统（细胞、大脑、经济、音乐）都依赖信息流的动态平衡</li>
             <li>正反馈维持系统稳定，负反馈导致系统崩溃 - 普遍存在的双刃剑</li>
             <li>系统崩溃的共同特征：信息处理能力与输入需求不匹配</li>
-            <li>贪婪的资源汲取导致系统内其他部分匮乏 - 从微观细胞到宏观经济</li>
+            <li>贪婪的资源汲取导致系统内其他部分匮乏 - 从微观细胞到宏观宇宙</li>
             <li>对均衡假设的挑战引发学科范式的冲突与突破</li>
-            <li>能量分布决定系统结构 - 从细胞组织到宇宙星系</li>
+            <li>能量分布决定系统结构 - 从细胞组织到宇宙星系再到音乐结构</li>
         </ul>
         
         <h3 style="color: var(--deep-blue); margin: 40px 0 20px; font-size: 1.6rem; text-align: center;">
@@ -713,18 +967,22 @@
         </h3>
         <div style="background: rgba(26, 35, 126, 0.05); padding: 30px; border-radius: 15px;">
             <p style="margin-bottom: 25px; font-size: 1.1rem;">
-                <strong>癌症治疗新思路：</strong>通过时空能量感知模型分析癌症发展，我们获得超越传统生物学的研究视角：癌症本质上是细胞层面的信息流通崩溃。这一认知为癌症治疗提供了新思路——恢复细胞信息流的平衡可能比直接杀死癌细胞更为根本。
+                <strong>跨学科研究新思路：</strong>通过时空能量感知模型分析癌症发展，结合音乐中的结构平衡原理，我们获得超越传统学科界限的研究视角。癌症本质上是细胞层面的信息流通崩溃，而音乐则是信息流通的艺术化表达。这一认知为跨学科研究提供了新思路——恢复系统信息流的平衡可能是解决复杂问题的核心。
             </p>
             <p style="font-size: 1.1rem;">
-                <strong>复杂系统理论验证：</strong>癌症研究为复杂系统理论提供了微观验证：当系统的信息处理能力无法匹配输入需求时，系统将不可避免地走向崩溃。这一原理在经济学、生态学和社会学中同样适用，揭示了从微观到宏观的系统性规律。
+                <strong>宇宙和谐原理：</strong>从巴赫的十二平均律到舒伯特的即兴曲，音乐为复杂系统理论提供了艺术验证：当系统的信息结构达到平衡时，系统将展现出和谐与美感。这一原理在生物学、物理学和认知科学中同样适用，揭示了从微观到宏观的普遍和谐规律。
             </p>
         </div>
     </div>
     
     <footer>
-        <p>枝繁叶茂 · 认知边界研究 | 时空感知与复杂系统探索 | 2025</p>
-        <p style="margin-top: 15px;">整合生物学、物理学与经济学的跨学科研究 <i class="fas fa-heart" style="color: var(--cancer-red); margin: 0 8px;"></i></p>
+        <p>枝繁叶茂 · 认知边界研究 | 时空感知、癌症生物学与音乐认知 | 2025</p>
+        <p style="margin-top: 15px;">整合生物学、物理学、音乐学与经济学的跨学科研究 <i class="fas fa-heart" style="color: var(--cancer-red); margin: 0 8px;"></i></p>
         <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">"我能否让我的心灵于人生的每一个瞬间，都更加接近其背后更本质的、伟大的、绽放的浩渺。"</p>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--music-purple);">
+            致每一双因欣赏美与艺术而锐利且温润的双眼。<br>
+            致每一位离弦之矢在抵达探索终点过程中的灵魂。
+        </p>
     </footer>
     
     <script>
@@ -741,7 +999,7 @@
         
         // 添加滚动动画
         window.addEventListener('scroll', function() {
-            const cards = document.querySelectorAll('.card, .model-box, .insight-box');
+            const cards = document.querySelectorAll('.card, .model-box, .insight-box, .timeline-item');
             const windowHeight = window.innerHeight;
             
             cards.forEach(card => {
@@ -755,7 +1013,7 @@
         });
         
         // 初始化卡片位置
-        document.querySelectorAll('.card, .model-box, .insight-box').forEach(card => {
+        document.querySelectorAll('.card, .model-box, .insight-box, .timeline-item').forEach(card => {
             card.style.opacity = 0;
             card.style.transform = 'translateY(30px)';
             card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
@@ -770,6 +1028,16 @@
         const leaves = document.querySelectorAll('.leaf-icon');
         leaves.forEach((leaf, index) => {
             leaf.style.animationDelay = `${index * 0.5}s`;
+        });
+        
+        // 添加音乐卡片特殊效果
+        const musicCard = document.querySelector('.music-section');
+        musicCard.addEventListener('mouseenter', function() {
+            this.style.boxShadow = '0 20px 50px rgba(138, 43, 226, 0.3)';
+        });
+        
+        musicCard.addEventListener('mouseleave', function() {
+            this.style.boxShadow = '0 12px 35px rgba(0,0,0,0.1)';
         });
     </script>
 </body>
