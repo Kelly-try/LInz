@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>统计物理学基础与跨学科认知整合</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --pink: #FFCCCC;
@@ -25,6 +25,7 @@
             --music-purple: #8A2BE2;
             --physics-blue: #1e88e5;
             --physics-light: #64b5f6;
+            --research-orange: #e67e22;
         }
         
         * {
@@ -56,7 +57,8 @@
                 radial-gradient(circle at 10% 20%, rgba(106, 17, 203, 0.05) 0%, transparent 25%),
                 radial-gradient(circle at 90% 80%, rgba(46, 204, 113, 0.05) 0%, transparent 25%),
                 radial-gradient(circle at 30% 70%, rgba(231, 76, 60, 0.03) 0%, transparent 20%),
-                radial-gradient(circle at 70% 30%, rgba(138, 43, 226, 0.05) 0%, transparent 20%);
+                radial-gradient(circle at 70% 30%, rgba(138, 43, 226, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(230, 126, 34, 0.03) 0%, transparent 30%);
             z-index: -1;
         }
         
@@ -65,7 +67,7 @@
             text-align: center;
             padding: 40px 20px 30px;
             margin-bottom: 40px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(245,255,245,0.9) 100%);
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(245,255,245,0.95) 100%);
             border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
             overflow: hidden;
@@ -79,7 +81,7 @@
             left: 0;
             width: 100%;
             height: 6px;
-            background: linear-gradient(90deg, var(--forest-green), var(--physics-blue), var(--cancer-red), var(--music-purple));
+            background: linear-gradient(90deg, var(--forest-green), var(--physics-blue), var(--cancer-red), var(--music-purple), var(--research-orange));
         }
         
         h1 {
@@ -202,6 +204,10 @@
         
         .cancer-section .card-header {
             background: linear-gradient(90deg, var(--cancer-red), #e67e22);
+        }
+        
+        .research-section .card-header {
+            background: linear-gradient(90deg, var(--research-orange), #e67e22);
         }
         
         .music-section .card-header {
@@ -378,7 +384,7 @@
             left: 0;
             width: 100%;
             height: 6px;
-            background: linear-gradient(90deg, var(--forest-green), var(--physics-blue), var(--cancer-red), var(--music-purple));
+            background: linear-gradient(90deg, var(--forest-green), var(--physics-blue), var(--cancer-red), var(--music-purple), var(--research-orange));
         }
         
         .conclusion-section::after {
@@ -388,7 +394,7 @@
             left: 0;
             width: 100%;
             height: 6px;
-            background: linear-gradient(90deg, var(--forest-green), var(--physics-blue), var(--cancer-red), var(--music-purple));
+            background: linear-gradient(90deg, var(--forest-green), var(--physics-blue), var(--cancer-red), var(--music-purple), var(--research-orange));
         }
         
         .insight-box {
@@ -444,6 +450,69 @@
             margin: 30px 0;
             border-left: 5px solid var(--gold);
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .research-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .research-box {
+            background: linear-gradient(135deg, rgba(255, 253, 231, 0.9) 0%, rgba(255, 247, 230, 0.9) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid var(--research-orange);
+            box-shadow: 0 5px 20px rgba(230, 126, 34, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .research-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(230, 126, 34, 0.15);
+        }
+        
+        .research-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--research-orange);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            box-shadow: 0 4px 8px rgba(230, 126, 34, 0.3);
+        }
+        
+        .research-title {
+            display: inline-block;
+            font-size: 1.3rem;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+        
+        .research-content {
+            padding-left: 55px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .research-content p {
+            margin-bottom: 10px;
+        }
+        
+        .research-highlight {
+            color: var(--research-orange);
+            font-weight: 600;
+        }
+        
+        .research-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--research-orange), transparent);
+            margin: 20px 0;
         }
         
         footer {
@@ -571,6 +640,10 @@
             color: #666;
         }
         
+        .methodology-section {
+            margin: 60px 0;
+        }
+        
         @media (max-width: 768px) {
             .grid-container {
                 grid-template-columns: 1fr;
@@ -587,6 +660,11 @@
             .flow-item {
                 min-width: 140px;
                 padding: 20px 15px;
+            }
+            
+            .founder-card {
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
@@ -868,6 +946,69 @@
         </div>
     </div>
     
+    <!-- 新增的癌症研究部分 -->
+    <div class="card research-section pulse methodology-section">
+        <div class="card-header">
+            <i class="fas fa-flask"></i>
+            <h2>癌症研究的多维度视角</h2>
+        </div>
+        <div class="card-body">
+            <div class="research-container">
+                <div class="research-box">
+                    <div class="research-number">1</div>
+                    <div class="research-title">肿瘤进化理论</div>
+                    <div class="research-content">
+                        <p><span class="research-highlight">压力适应：</span>肿瘤细胞在环境压力下通过改变自身行为来适应环境。</p>
+                        <p>这一过程类似于自然选择，癌细胞群体表现出高度的遗传异质性和可塑性，使其能够在治疗压力下存活并进化。</p>
+                    </div>
+                </div>
+                
+                <div class="research-box">
+                    <div class="research-number">2</div>
+                    <div class="research-title">组学数据方法</div>
+                    <div class="research-content">
+                        <p><span class="research-highlight">动态数据采集：</span>通过培养皿、动物模型等实验系统收集不同阶段的肿瘤数据。</p>
+                        <p>在癌前病变信息及肿瘤转移相关信息消失前，捕捉肿瘤发展全过程的关键数据点，将肿瘤视为一个动态演化的过程而非静态实体。</p>
+                    </div>
+                </div>
+                
+                <div class="research-divider"></div>
+                
+                <div class="research-box">
+                    <div class="research-number">3</div>
+                    <div class="research-title">计算建模方法</div>
+                    <div class="research-content">
+                        <p><span class="research-highlight">工程化建模：</span>利用计算机模拟构建肿瘤发展的预测模型。</p>
+                        <p>这种方法不依赖于预先设定的生物学假设，而是通过数据驱动的方式发现肿瘤行为的潜在规律，揭示传统方法可能忽略的模式。</p>
+                    </div>
+                </div>
+                
+                <div class="research-box">
+                    <div class="research-number">4</div>
+                    <div class="research-title">生物现象与机理研究</div>
+                    <div class="research-content">
+                        <p><span class="research-highlight">假设驱动研究：</span>基于对生物现象的观察提出假设，指导研究过程。</p>
+                        <p>这种方法通过实验验证特定机制，深化对肿瘤发生发展原理的理解，为靶向治疗提供理论基础。</p>
+                    </div>
+                </div>
+                
+                <div class="model-box" style="margin-top: 30px;">
+                    <h3 class="model-title"><i class="fas fa-balance-scale"></i> 方法论整合</h3>
+                    <p>综合运用多种研究方法：</p>
+                    <ul style="padding-left: 30px; margin: 15px 0;">
+                        <li>假设驱动与数据驱动方法的互补</li>
+                        <li>多组学数据的整合分析</li>
+                        <li>计算模型与实验验证的结合</li>
+                        <li>从分子到系统层面的多尺度研究</li>
+                    </ul>
+                    <p style="margin-top: 15px; font-style: italic; color: var(--research-orange);">
+                        "在癌症研究中，统计物理学提供了理解肿瘤群体行为的框架，而信息学方法则提供了处理复杂多维数据的工具"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="conclusion-section">
         <h2 style="text-align: center; color: var(--purple); margin-bottom: 40px;">
             <i class="fas fa-lightbulb"></i> 跨学科洞见：统计物理的普遍原理
@@ -924,7 +1065,7 @@
         
         // 添加滚动动画
         window.addEventListener('scroll', function() {
-            const cards = document.querySelectorAll('.card, .model-box, .insight-box');
+            const cards = document.querySelectorAll('.card, .model-box, .insight-box, .research-box');
             const windowHeight = window.innerHeight;
             
             cards.forEach(card => {
@@ -938,7 +1079,7 @@
         });
         
         // 初始化卡片位置
-        document.querySelectorAll('.card, .model-box, .insight-box').forEach(card => {
+        document.querySelectorAll('.card, .model-box, .insight-box, .research-box').forEach(card => {
             card.style.opacity = 0;
             card.style.transform = 'translateY(30px)';
             card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
@@ -963,6 +1104,18 @@
         
         physicsCard.addEventListener('mouseleave', function() {
             this.style.boxShadow = '0 12px 35px rgba(0,0,0,0.1)';
+        });
+        
+        // 研究卡片悬停效果
+        const researchCards = document.querySelectorAll('.research-box');
+        researchCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 12px 30px rgba(230, 126, 34, 0.2)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 5px 20px rgba(230, 126, 34, 0.1)';
+            });
         });
     </script>
 </body>
